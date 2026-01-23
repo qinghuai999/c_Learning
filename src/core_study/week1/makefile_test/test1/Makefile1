@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-Wall
+LDFLAGS=
+all: tictactoe
+tictactoe: tictactoe.c
+	gcc -Wall tictactoe.c -o tictactoe
+
+clean:
+	rm -f tictactoe
+

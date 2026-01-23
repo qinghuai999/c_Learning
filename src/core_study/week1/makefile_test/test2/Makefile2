@@ -1,0 +1,18 @@
+CC = gcc
+CFLAGS = -Wall -pedantic -std=gnu99 -Wextra
+DEBUG = -g
+
+.DEFAULT_GOAL :=main
+.PHONY: clean
+
+main: main.o phrase.o
+	$(CC) $(CFLAGS) main.o phrase.o -o main
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+phrase.o: phrase.c
+	$(CC) $(CFLAGS) -c phrase.c -o phrase.o
+
+clean:
+	rm -f main *.o
